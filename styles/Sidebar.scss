@@ -1,0 +1,21 @@
+.sidebar {
+  width: 55px;
+  height: 100vh;
+  background: #181818;
+  transition: 300ms;
+}
+
+.sidebar-active {
+  width: 250px;
+  height: 100vh;
+  background: #181818;
+  transition: 300ms;
+  .sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    color: white;
+    transition: 300ms;
+  }
+}
