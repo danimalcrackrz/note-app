@@ -1,10 +1,11 @@
 .sidebar {
-  width: 55px;
+  display: flex;
+  justify-content: center;
+  width: 70px;
   height: 100vh;
   background: #181818;
   transition: 300ms;
 }
-
 .sidebar-active {
   width: 250px;
   height: 100vh;
@@ -17,5 +18,8 @@
     list-style: none;
     color: white;
     transition: 300ms;
+    & li {
+      font-size: 1.75rem;
+    }
   }
 }
