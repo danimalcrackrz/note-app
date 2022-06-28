@@ -1,4 +1,7 @@
 .drawer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   background: rgb(57, 57, 255);
   width: 100%;
   padding: 3rem;

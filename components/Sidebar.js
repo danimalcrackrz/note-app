@@ -1,11 +1,21 @@
 import React, { useState } from "react"
 import { Spin as Hamburger } from "hamburger-react"
-import { BsPlusCircleFill } from "react-icons/bs"
+import { useSetRecoilState } from "recoil"
+import { notesList } from "../atoms"
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const updateNotesList = useSetRecoilState(notesList)
 
-  const colors = ["red", "green", "yellow", "blue"]
+  const addNote = () => {
+    updateNotesList((prevList) => [
+      ...prevList,
+      {
+        title: "",
+        content: "",
+      },
+    ])
+  }
 
   return (
     <div className={isOpen ? "sidebar-active" : "sidebar"}>
@@ -19,7 +29,7 @@ const Sidebar = () => {
       />
       {isOpen && (
         <ul className='sidebar-menu'>
-          <li>Create Note</li>
+          <li onClick={addNote}>Create Note</li>
         </ul>
       )}
     </div>
